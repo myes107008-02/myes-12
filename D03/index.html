@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>熏熏的數位手札 • 超級無敵文青風個人網站</title>
+  <meta name="description" content="熏熏的個人文青風網站。就讀安溪國中，於智光商工學習打字指法與網頁開發，探索商業經營、電子商務與智慧科技，期許成為全方位數位商管跨領域人才！">
+
+  <!-- SEO & Open Graph -->
+  <meta property="og:title" content="熏熏的數位手札 • 追光紀事">
+  <meta property="og:description" content="安溪國中 ✕ 智光商工 | 商業經營 • 電子商務 • 智慧科技 • 網頁開發探索">
+  <meta property="og:image" content="images/q_avatar.png">
+
+  <!-- Fonts & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 頂部導覽列 Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#hero" class="nav-brand">
+        <img src="images/q_avatar.png" alt="熏熏 Q版頭像" class="nav-brand-icon">
+        <span>熏熏 Xunxun</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">追光首頁</a></li>
+        <li><a href="#about" class="nav-link">關於熏熏</a></li>
+        <li><a href="#typing" class="nav-link">指法實戰</a></li>
+        <li><a href="#portfolio" class="nav-link">網頁與電商</a></li>
+        <li><a href="#quotes" class="nav-link">文青手札</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="btn-icon-toggle" aria-label="切換暗黑/亮色主題">
+          <span id="themeIcon">☀️</span>
+          <span id="themeText">日暮暖陽</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 首頁橫幅 Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      
+      <!-- 品牌標語與個人簡介 -->
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="dot"></span>
+          <span>安溪國中 ✕ 智光商工 技藝學習紀事</span>
+        </div>
+
+        <h1 class="hero-title">
+          你好，我是 <span>熏熏</span> 🌸<br>
+          指尖寫下數位的溫度。
+        </h1>
+
+        <p class="hero-subtitle">
+          現就讀安溪國中。深愛商業經營的智慧、電子商務的動態與智慧科技的無限可能。目前正於智光商工課程中努力鍛鍊<strong>打字指法</strong>與<strong>網頁開發</strong>，一步一腳印邁向理想未來。
+        </p>
+
+        <div class="hero-quote-box">
+          「在代碼與字句之間，敲擊出節奏；在商管與科技之間，探索無窮天地。」
+        </div>
+
+        <div class="hero-actions">
+          <a href="#about" class="btn-primary">
+            <span>探索我的故事</span>
+            <span>↓</span>
+          </a>
+          <a href="#typing" class="btn-secondary">
+            <span>體驗打字練習 ⌨️</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Polaroid 雙頭像展示區 (Q版與實照互動切換) -->
+      <div class="hero-avatar-area">
+        
+        <!-- 浮動特色標籤 Floating Badges -->
+        <div class="floating-badge floating-badge-1">
+          <span>🏫 安溪國中</span>
+        </div>
+        <div class="floating-badge floating-badge-2">
+          <span>💡 數位商管跨領域人才</span>
+        </div>
+
+        <div class="polaroid-card">
+          <!-- 拍立得紙膠帶裝飾 -->
+          <div class="washi-tape"></div>
+
+          <div class="polaroid-img-wrapper">
+            <img src="images/q_avatar.png" alt="熏熏 Q版圖像" class="polaroid-img" id="heroAvatarImg">
+          </div>
+
+          <div class="polaroid-caption">
+            <h3 class="polaroid-name" id="avatarCaption">AI Q版繪繪形象 🌸</h3>
+            <p class="polaroid-sub" id="avatarSub">由大頭照 1.jpg 詠唱生成的智慧靈魂</p>
+          </div>
+        </div>
+
+        <!-- 切換按鈕 -->
+        <div class="avatar-switcher-bar">
+          <span style="font-size:0.82rem; color:var(--text-muted); font-weight:600;">切換大頭照：</span>
+          <button class="switch-btn active" id="btnQAvatar">✨ Q版圖像 (MyQ)</button>
+          <button class="switch-btn" id="btnRealAvatar">📷 真人照 (1.jpg)</button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 關於熏熏 & 三大核心領域 About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-subtitle">ABOUT XUNXUN</span>
+        <h2 class="section-title">關於熏熏 • 跨領域尋光之路</h2>
+        <p class="section-desc">結合商管敏銳度與科技實作力，期許成為全方位的數位商管人才</p>
+      </div>
+
+      <div class="about-grid">
+        
+        <!-- 左側：個人故事手札 -->
+        <div class="story-card">
+          <div>
+            <span class="story-badge">🌱 學習心路歷程</span>
+            <h3 class="story-title">從安溪國中出發，於智光商工扎根</h3>
+            <p class="story-p">
+              我是熏熏，目前就讀於安溪國中。在求學的過程中，我發現自己對商業領域的脈動與智慧科技的應用有著濃厚的興趣與好奇心。
+            </p>
+            <p class="story-p">
+              在智光商工資料處理與商管課程中，我正沉浸於基礎指法的熟練訓練與 HTML/CSS/JS 網頁開發實作。每一次準確無誤的敲擊、每一行成功渲染的 code，都讓我感受到數位創作的獨特魅力。
+            </p>
+          </div>
+
+          <div class="story-quote-highlight">
+            🎯 終極願景：期許自己未來能成為全方位的數位商管跨領域人才！
+          </div>
+        </div>
+
+        <!-- 右側：三大專業探索領域 (Pillars) -->
+        <div class="pillars-grid">
+          
+          <div class="pillar-card">
+            <div class="pillar-icon-box pillar-icon-1">📈</div>
+            <div class="pillar-content">
+              <h4>商業經營 (Business Management)</h4>
+              <p>學習商業邏輯、組織規劃與市場敏銳度，理解企業運行的核心架構與溝通技巧。</p>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box pillar-icon-2">🛍️</div>
+            <div class="pillar-content">
+              <h4>電子商務 (E-Commerce)</h4>
+              <p>探索線上品牌建立、數位行銷策略與跨國電商平台，縮短產品與顧客之間的距離。</p>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box pillar-icon-3">🤖</div>
+            <div class="pillar-content">
+              <h4>智慧科技 (Smart Technology)</h4>
+              <p>結合 AI 工具輔助創作、自動化思維與網頁開發技術，引領未來數位化轉型潮流。</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 智光商工技藝課：打字指法練習區 Touch Typing Simulator -->
+  <section class="section typing-section" id="typing">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-subtitle">PRACTICE & SKILLS</span>
+        <h2 class="section-title">智光商工技藝課程 • 打字指法實戰沙盒</h2>
+        <p class="section-desc">正確的指法是流暢溝通與寫好程式碼的基礎！歡迎在下方練習鍵盤打字速度</p>
+      </div>
+
+      <div class="typing-container-card">
+        
+        <div class="typing-header-bar">
+          <div class="typing-title-group">
+            <span class="typing-badge-zhiguang">智光商工指法訓練</span>
+            <h3 style="font-family:var(--font-serif); font-size:1.2rem;">打字準確度與速度挑戰</h3>
+          </div>
+
+          <div class="typing-stats-bar">
+            <div class="stat-item">
+              <div class="stat-val" id="wpmVal">0</div>
+              <div class="stat-label">字速 (WPM)</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val" id="accuracyVal">100%</div>
+              <div class="stat-label">準確率</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 句子顯示區域 -->
+        <div class="typing-text-display" id="typingDisplay">
+          <!-- JS 動態渲染文字 -->
+        </div>
+
+        <!-- 輸入框 -->
+        <input type="text" class="typing-input-field" id="typingInput" placeholder="請在此輸入上方出現的文字..." autocomplete="off">
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+          <button class="btn-secondary" id="resetTypingBtn" style="padding:8px 18px; font-size:0.85rem;">🔄 重置練習</button>
+          <button class="btn-primary" id="nextSentenceBtn" style="padding:8px 18px; font-size:0.85rem;">下一句 ➔</button>
+        </div>
+
+        <!-- 虛擬鍵盤 Visualizer -->
+        <div class="keyboard-visualizer">
+          <div class="kb-row">
+            <div class="kb-key">Q</div><div class="kb-key">W</div><div class="kb-key">E</div><div class="kb-key">R</div><div class="kb-key">T</div>
+            <div class="kb-key">Y</div><div class="kb-key">U</div><div class="kb-key">I</div><div class="kb-key">O</div><div class="kb-key">P</div>
+          </div>
+          <div class="kb-row">
+            <div class="kb-key">A</div><div class="kb-key">S</div><div class="kb-key">D</div><div class="kb-key">F</div><div class="kb-key">G</div>
+            <div class="kb-key">H</div><div class="kb-key">J</div><div class="kb-key">K</div><div class="kb-key">L</div>
+          </div>
+          <div class="kb-row">
+            <div class="kb-key">Z</div><div class="kb-key">X</div><div class="kb-key">C</div><div class="kb-key">V</div><div class="kb-key">B</div>
+            <div class="kb-key">N</div><div class="kb-key">M</div>
+          </div>
+          <div class="kb-row">
+            <div class="kb-key space">SPACEBAR</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 網頁開發與電子商務展示 Section -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-subtitle">WEB & E-COMMERCE SHOWCASE</span>
+        <h2 class="section-title">網頁開發與數位藝廊</h2>
+        <p class="section-desc">結合 HTML/CSS 語法學習與電子商務微型概念</p>
+      </div>
+
+      <div class="portfolio-grid">
+        
+        <!-- 作品 1：HTML/CSS 網頁寫作程式碼 -->
+        <div class="portfolio-card">
+          <div class="portfolio-top-bar">
+            <div class="mac-dots">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="portfolio-title-bar">index.html — 熏熏的數位首頁</div>
+          </div>
+          
+          <div class="portfolio-body">
+            <div>
+              <div class="code-preview-box">
+                <span class="code-tag">&lt;!DOCTYPE html&gt;</span><br>
+                <span class="code-tag">&lt;div</span> <span class="code-attr">class=</span><span class="code-string">"profile-card"</span><span class="code-tag">&gt;</span><br>
+                &nbsp;&nbsp;<span class="code-tag">&lt;h1&gt;</span>熏熏 Xunxun<span class="code-tag">&lt;/h1&gt;</span><br>
+                &nbsp;&nbsp;<span class="code-tag">&lt;p&gt;</span>安溪國中 ✕ 智光商工<span class="code-tag">&lt;/p&gt;</span><br>
+                &nbsp;&nbsp;<span class="code-tag">&lt;span&gt;</span>全方位數位商管人才<span class="code-tag">&lt;/span&gt;</span><br>
+                <span class="code-tag">&lt;/div&gt;</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:1.15rem; margin-bottom:8px;">網頁語構與手作美學</h4>
+              <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+                學習將結構化 HTML 結合質感 CSS 樣式，創造出兼具視覺與流暢體驗的文青風格網頁。
+              </p>
+            </div>
+
+            <div class="tech-pills">
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS3</span>
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">RWD 響應式</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 作品 2：電子商務選品概念 -->
+        <div class="portfolio-card">
+          <div class="portfolio-top-bar">
+            <div class="mac-dots">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="portfolio-title-bar">xunxun-store.concept</div>
+          </div>
+
+          <div class="portfolio-body">
+            <div>
+              <div class="ecom-mock-item">
+                <div class="ecom-img">📖</div>
+                <div class="ecom-details" style="flex-grow:1;">
+                  <h5>熏熏的手作文青電子手帳</h5>
+                  <p>結合智慧科技與日系復古美學的數位筆記範本</p>
+                  <div class="ecom-price">NT$ 150 <span style="font-size:0.75rem; color:var(--text-light); text-decoration:line-through;">NT$ 250</span></div>
+                </div>
+              </div>
+
+              <h4 style="font-family:var(--font-serif); font-size:1.15rem; margin-bottom:8px;">電子商務與品牌概念實踐</h4>
+              <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+                研究數位商品銷售、文案撰寫與顧客體驗設計，將商業經營理論融入實際場景。
+              </p>
+            </div>
+
+            <div class="tech-pills">
+              <span class="tech-pill">電子商務</span>
+              <span class="tech-pill">數位行銷</span>
+              <span class="tech-pill">商品文案</span>
+              <span class="tech-pill">商業經營</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 文青語錄與心情留言板 Literary & Guestbook Section -->
+  <section class="section" id="quotes" style="background:var(--bg-secondary); border-top:1px solid var(--card-border);">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-subtitle">LITERARY CORNER & GUESTBOOK</span>
+        <h2 class="section-title">文青隨筆與加油留言板</h2>
+        <p class="section-desc">分享學習靈感，歡迎留下一句溫暖的話給熏熏！</p>
+      </div>
+
+      <div class="quotes-guestbook-grid">
+        
+        <!-- 左側：每日語錄卡片 -->
+        <div class="quote-card-box">
+          <div>
+            <div class="quote-symbol">“</div>
+            <p class="quote-text" id="quoteTextElem">
+              「在代碼的律動與指法間，看見數位未來的萬種可能。」
+            </p>
+            <div class="quote-author" id="quoteAuthorElem">— 熏熏的手札</div>
+          </div>
+
+          <div style="margin-top:24px; text-align:right;">
+            <button class="btn-secondary" id="refreshQuoteBtn" style="padding:8px 18px; font-size:0.85rem;">
+              🎲 抽取下一句靈感
+            </button>
+          </div>
+        </div>
+
+        <!-- 右側：給熏熏的心情留言板 -->
+        <div class="guestbook-card">
+          <h3 style="font-family:var(--font-serif); font-size:1.25rem;">✍️ 寫給熏熏的心情留言</h3>
+          
+          <form class="guestbook-form" id="guestbookForm">
+            <div class="form-group">
+              <label for="guestName" class="form-label">您的名字 / 稱呼：</label>
+              <input type="text" id="guestName" class="form-input" placeholder="例如：加油的同學 / 智光老師" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guestMsg" class="form-label">想對熏熏說的話：</label>
+              <textarea id="guestMsg" class="form-textarea" placeholder="寫下鼓勵或對網站的感覺..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">送出溫暖留言 💌</button>
+          </form>
+
+          <!-- 留言列表 (LocalStorage 持久化) -->
+          <div class="guestbook-messages-list" id="messageList">
+            <!-- Dynamic Messages -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 頁尾 Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">熏熏 Xunxun • 追光紀錄</div>
+      <p class="footer-quote">
+        安溪國中 ✕ 智光商工資料處理科 | 商業經營 • 電子商務 • 智慧科技 • 網頁開發
+      </p>
+      <div class="footer-copy">
+        © 2026 熏熏 Xunxun. All Rights Reserved. Designed with Aesthetic Literary Style.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>

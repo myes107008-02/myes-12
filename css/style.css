@@ -1,0 +1,884 @@
+:root {
+  --primary-color: #0b4f8a;       /* 安溪藍 / 智光穩重藍 */
+  --primary-dark: #07345d;
+  --primary-light: #e8f2fa;
+  --secondary-color: #c98a2c;     /* 典雅金色 / 職群榮耀金 */
+  --secondary-hover: #b0741e;
+  --accent-color: #d94336;        /* 亮眼標籤紅 */
+  --accent-green: #2e8b57;
+  --text-main: #2b333e;
+  --text-muted: #657385;
+  --bg-body: #f4f7fb;
+  --bg-surface: #ffffff;
+  --bg-elevated: #ffffff;
+  --border-color: #e1e7f0;
+  --border-light: #edf2f7;
+  --shadow-sm: 0 2px 6px rgba(11, 79, 138, 0.06);
+  --shadow-md: 0 6px 18px rgba(11, 79, 138, 0.1);
+  --shadow-lg: 0 12px 30px rgba(11, 79, 138, 0.14);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --transition: all 0.25s ease-in-out;
+  --font-base: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* 頂端功能列 (參考安溪國中頂部 ::: 跳轉與快捷) */
+.top-bar {
+  background: #1a2736;
+  color: #c8d3e0;
+  font-size: 0.85rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.container {
+  width: 92%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.top-quick-links a {
+  color: #c8d3e0;
+  margin-right: 14px;
+}
+.top-quick-links a:hover {
+  color: #ffd166;
+}
+
+.top-right-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.semester-badge {
+  background: rgba(201, 138, 44, 0.25);
+  color: #ffd68a;
+  border: 1px solid rgba(201, 138, 44, 0.5);
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* 雙校聯合 Header 橫幅 (安溪國中 × 智光商工) */
+.main-header {
+  background: linear-gradient(135deg, #07345d 0%, #0b4f8a 60%, #1765a8 100%);
+  color: white;
+  padding: 24px 0 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.main-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 35%;
+  background: radial-gradient(circle at right center, rgba(201, 138, 44, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brand-title-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.school-badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-round {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--primary-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--secondary-color);
+  flex-shrink: 0;
+}
+
+.badge-round.ckvs {
+  color: #a31d1d;
+  border-color: #e5989b;
+}
+
+.title-texts h1 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title-texts .sub-title {
+  font-size: 0.95rem;
+  color: #dbeafe;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  padding: 4px 8px 4px 14px;
+  max-width: 320px;
+}
+
+.header-search input {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 0.88rem;
+  width: 100%;
+}
+.header-search input::placeholder {
+  color: #bfdbfe;
+}
+.header-search button {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+.header-search button:hover {
+  background: var(--secondary-hover);
+}
+
+/* 主導覽列 Navigation (仿安溪國中樣式與現代下拉切換) */
+.main-nav-bar {
+  background: #062b4d;
+  border-bottom: 3px solid var(--secondary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links > li {
+  position: relative;
+}
+
+.nav-links > li > a {
+  display: block;
+  color: #f1f5f9;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-links > li > a:hover,
+.nav-links > li.active > a {
+  background: var(--primary-color);
+  color: #ffd68a;
+}
+
+/* 下拉選單 */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: var(--shadow-lg);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  overflow: hidden;
+  z-index: 1010;
+  border-top: 2px solid var(--secondary-color);
+}
+
+.nav-links > li:hover .dropdown-menu {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--text-main);
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.dropdown-menu a:hover {
+  background: var(--primary-light);
+  color: var(--primary-color);
+  padding-left: 20px;
+}
+
+.nav-toggle-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* 焦點 Hero 橫幅 */
+.hero-banner {
+  background: linear-gradient(120deg, #ffffff 0%, #f0f7ff 100%);
+  border-bottom: 1px solid var(--border-color);
+  padding: 36px 0;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.hero-content p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 22px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.hero-tag {
+  background: white;
+  border: 1px solid #bfdbfe;
+  color: var(--primary-color);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #1b6ca8);
+  color: white;
+  padding: 11px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(11, 79, 138, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(11, 79, 138, 0.35);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 11px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: var(--primary-color);
+}
+
+/* 右側今日重要概況卡片 */
+.hero-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.hero-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.info-label {
+  width: 90px;
+  color: var(--text-muted);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.info-val {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.teacher-avatars {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.teacher-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* 主頁內容區雙欄排版 (仿安溪國中首頁排版：主要內容區 + 側邊欄) */
+.page-layout {
+  padding: 36px 0 60px;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 2.8fr 1fr;
+  gap: 32px;
+}
+
+/* 區塊通用外觀 */
+.section-block {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  background: white;
+  border-bottom: 2px solid var(--border-light);
+  border-left: 5px solid var(--primary-color);
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* 16 週次課程進度矩陣 (Schedule Matrix) */
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 14px 22px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: white;
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 22px;
+}
+
+.schedule-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: var(--transition);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.schedule-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.schedule-card.current-week {
+  border: 2px solid var(--secondary-color);
+  background: linear-gradient(to bottom, #fffdf8, #ffffff);
+}
+
+.schedule-card.current-week::after {
+  content: '★ 本週精選';
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: var(--secondary-color);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.week-num {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.card-date {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: var(--bg-body);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.card-topic {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  min-height: 44px;
+  line-height: 1.4;
+}
+
+.card-meta {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+}
+
+.meta-teacher {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.meta-room {
+  color: var(--text-muted);
+}
+
+.card-badge-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.badge-event {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* 最新公告區塊 (仿安溪國中公告列表) */
+.news-list {
+  list-style: none;
+  padding: 10px 22px;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border-light);
+  gap: 16px;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-category {
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.cat-teaching {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.cat-notice {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.cat-activity {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.news-title {
+  flex-grow: 1;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.news-title a:hover {
+  text-decoration: underline;
+}
+
+.news-date {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* 智光商工資處科特色介紹卡片 */
+.ckvs-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 22px;
+}
+
+.ckvs-feature-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.feature-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.feature-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* 側邊欄 Sidebar (安溪風格快速選單與資源) */
+.sidebar-widget {
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.widget-header {
+  background: #f8fafc;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border-light);
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.widget-content {
+  padding: 16px 18px;
+}
+
+.quick-link-list {
+  list-style: none;
+}
+
+.quick-link-list li {
+  margin-bottom: 10px;
+}
+
+.quick-link-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--bg-body);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--text-main);
+  border: 1px solid transparent;
+}
+
+.quick-link-list a:hover {
+  background: var(--primary-light);
+  color: var(--primary-color);
+  border-color: #bfdbfe;
+}
+
+.rule-alert-box {
+  background: #fff8eb;
+  border-left: 4px solid var(--secondary-color);
+  padding: 12px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.86rem;
+  color: #78350f;
+  line-height: 1.55;
+  margin-top: 10px;
+}
+
+/* 頁尾 Footer */
+.main-footer {
+  background: #111e2e;
+  color: #a0aec0;
+  padding: 40px 0 24px;
+  font-size: 0.88rem;
+  border-top: 4px solid var(--primary-color);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-col h4 {
+  color: white;
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+  border-left: 3px solid var(--secondary-color);
+  padding-left: 8px;
+}
+
+.footer-col p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  color: #718096;
+}
+
+/* 動畫與響應式微調 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 992px) {
+  .hero-grid, .layout-grid, .footer-grid, .ckvs-intro-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links > li > a {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: #041d33;
+  }
+  .dropdown-menu a {
+    color: #cbd5e1;
+    padding-left: 30px;
+  }
+  .nav-toggle-btn {
+    display: block;
+  }
+  .header-brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header-search {
+    width: 100%;
+    max-width: 100%;
+  }
+}

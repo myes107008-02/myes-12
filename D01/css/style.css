@@ -1,0 +1,640 @@
+/* D01 課程專用樣式表 */
+
+:root {
+  --d01-primary: #0b4f8a;
+  --d01-primary-dark: #07345d;
+  --d01-accent: #c98a2c;
+  --bg-dark-kb: #1e293b;
+  --key-bg: #334155;
+  --key-text: #f8fafc;
+  
+  /* 手指色彩定義 */
+  --finger-l-pinky: #f43f5e;     /* 左手小指：粉紅/玫紅 */
+  --finger-l-ring: #fb923c;      /* 左手無名指：橙色 */
+  --finger-l-middle: #facc15;    /* 左手中指：黃色 */
+  --finger-l-index: #4ade80;     /* 左手食指：淺綠 */
+  --finger-r-index: #22d3ee;     /* 右手食指：青藍 */
+  --finger-r-middle: #60a5fa;    /* 右手中指：天藍 */
+  --finger-r-ring: #a855f7;      /* 右手無名指：紫羅蘭 */
+  --finger-r-pinky: #ec4899;     /* 右手小指：桃紅 */
+  --finger-thumb: #94a3b8;       /* 雙手大拇指：銀灰 */
+}
+
+/* 頂端導航與返回主頁 */
+.lesson-nav {
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.lesson-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-size: 0.9rem;
+  gap: 8px;
+}
+
+.breadcrumb-list li + li::before {
+  content: '/';
+  color: var(--text-muted);
+  margin-right: 8px;
+}
+
+.lesson-header-banner {
+  background: linear-gradient(135deg, #0b4f8a 0%, #1765a8 100%);
+  color: white;
+  padding: 34px 0 28px;
+  position: relative;
+}
+
+.lesson-title-area h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.lesson-subtitle {
+  font-size: 1rem;
+  color: #dbeafe;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.lesson-badge {
+  background: var(--secondary-color);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* D01 課程內容主題分頁籤 */
+.topic-tabs-bar {
+  background: white;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.topic-tabs-list {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  overflow-x: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.topic-tab-item {
+  flex-shrink: 0;
+}
+
+.topic-tab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 3px solid transparent;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.topic-tab-link:hover, .topic-tab-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background: #f8fafc;
+}
+
+/* 內容區塊 */
+.lesson-content-wrap {
+  padding: 40px 0 60px;
+}
+
+.topic-section {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 40px;
+  padding: 32px;
+  scroll-margin-top: 70px;
+}
+
+.topic-header {
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.topic-title-group h2 {
+  font-size: 1.45rem;
+  color: var(--primary-dark);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.topic-title-group p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* 4.1 影音播放器容器 */
+.video-feature-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.video-player-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  background: #000;
+}
+
+.video-player-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-notes-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.video-notes-card h3 {
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.takeaway-list {
+  list-style: none;
+}
+
+.takeaway-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-main);
+}
+
+.takeaway-list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* 4.2 智光資處科三年規劃卡片 */
+.grade-curriculum-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.grade-btn {
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.grade-btn.active, .grade-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.curriculum-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.course-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: var(--transition);
+}
+
+.course-box:hover {
+  border-color: var(--primary-color);
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.course-box-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.course-box-name {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.course-credits {
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.course-box-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.cert-highlight-badge {
+  display: inline-block;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* 4.3 鍵盤指法視覺化與練習器 */
+.typing-instruction-box {
+  background: #eff6ff;
+  border-left: 4px solid var(--primary-color);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-bottom: 24px;
+  font-size: 0.92rem;
+  color: #1e3a8a;
+  line-height: 1.6;
+}
+
+.keyboard-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: #f1f5f9;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.legend-color-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 虛擬鍵盤容器 */
+.virtual-keyboard-wrap {
+  background: var(--bg-dark-kb);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.5), var(--shadow-md);
+  overflow-x: auto;
+  margin-bottom: 28px;
+}
+
+.keyboard-board {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 780px;
+}
+
+.kb-row {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.kb-key {
+  height: 48px;
+  min-width: 44px;
+  background: var(--key-bg);
+  color: var(--key-text);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  user-select: none;
+  border-bottom: 3px solid rgba(0,0,0,0.4);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.1s ease;
+  position: relative;
+  padding: 0 6px;
+}
+
+.kb-key .sub-char {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  margin-bottom: -2px;
+}
+
+.kb-key.home-row-bump::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  width: 12px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+}
+
+/* 鍵盤指法顏色分類 */
+.kb-key.f-lp { border-top: 3px solid var(--finger-l-pinky); }
+.kb-key.f-lr { border-top: 3px solid var(--finger-l-ring); }
+.kb-key.f-lm { border-top: 3px solid var(--finger-l-middle); }
+.kb-key.f-li { border-top: 3px solid var(--finger-l-index); }
+.kb-key.f-ri { border-top: 3px solid var(--finger-r-index); }
+.kb-key.f-rm { border-top: 3px solid var(--finger-r-middle); }
+.kb-key.f-rr { border-top: 3px solid var(--finger-r-ring); }
+.kb-key.f-rp { border-top: 3px solid var(--finger-r-pinky); }
+.kb-key.f-th { border-top: 3px solid var(--finger-thumb); }
+
+.kb-key.key-wide-1 { min-width: 65px; }
+.kb-key.key-wide-15 { min-width: 80px; }
+.kb-key.key-wide-2 { min-width: 100px; }
+.kb-key.key-space { min-width: 280px; }
+
+/* 鍵盤按鍵按下/高亮動畫 */
+.kb-key.active-key {
+  transform: translateY(2px);
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.9);
+  background: #fbbf24 !important;
+  color: #0f172a !important;
+  border-color: #d97706 !important;
+}
+
+/* 互動打字練習測試卡片 */
+.typing-test-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.typing-feedback-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.hud-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-val {
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.finger-guide-pill {
+  background: #fef08a;
+  color: #854d0e;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: 1px solid #fde047;
+}
+
+.typing-target-sample {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 1.25rem;
+  background: white;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+  color: #1e293b;
+}
+
+.typing-input-area {
+  width: 100%;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 1.25rem;
+  padding: 12px 18px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  letter-spacing: 2px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* 4.4 Antigravity AI 網站生成示範區 */
+.antigravity-hero {
+  background: linear-gradient(135deg, #091e3a 0%, #1e3a8a 100%);
+  color: white;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.antigravity-hero h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #67e8f9;
+}
+
+.antigravity-workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.workflow-step-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.step-number {
+  display: inline-block;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.workflow-step-card h4 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #f8fafc;
+}
+
+.workflow-step-card p {
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+
+/* Antigravity 即時互動體驗沙盒 */
+.antigravity-sandbox {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: white;
+}
+
+.sandbox-controls {
+  background: #f1f5f9;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.prompt-preset-select {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  font-family: inherit;
+  flex-grow: 1;
+}
+
+.btn-generate-ai {
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-generate-ai:hover {
+  background: linear-gradient(135deg, #0369a1, #1d4ed8);
+  transform: translateY(-1px);
+}
+
+.sandbox-split-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 380px;
+}
+
+.sandbox-code-pane {
+  background: #0f172a;
+  color: #93c5fd;
+  padding: 18px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.85rem;
+  overflow-y: auto;
+  border-right: 1px solid #334155;
+}
+
+.sandbox-code-pane pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.sandbox-preview-pane {
+  background: #ffffff;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* 響應式調整 */
+@media (max-width: 900px) {
+  .video-feature-grid,
+  .antigravity-workflow-steps,
+  .sandbox-split-view {
+    grid-template-columns: 1fr;
+  }
+}
